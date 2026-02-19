@@ -31,11 +31,11 @@ class MainActivity : ComponentActivity() {
                             .padding(innerPadding)
                             .fillMaxSize(),
                         employeeList = employees?.value ?: emptyList(),
-                        onSave = { name, age ->
-                            viewModel.save(name, age)
+                        onSave = { name, age ,salary->
+                            viewModel.save(name, age,salary)
                         },
-                        onUpdate = { id, name, age ->
-                            viewModel.update(id, name, age)
+                        onUpdate = { id, name, age ,salary->
+                            viewModel.update(id, name, age,salary)
                         },
                         onDelete = { id ->
                             viewModel.delete(id)

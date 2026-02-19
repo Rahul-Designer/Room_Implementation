@@ -17,13 +17,13 @@ class RoomViewModel : ViewModel() {
         dao = db.getEmployeeDao()
     }
 
-    fun save(name: String, age: Int) = viewModelScope.launch {
-        val employee = Employee(name = name, age = age)
+    fun save(name: String, age: Int,salary : Int) = viewModelScope.launch {
+        val employee = Employee(name = name, age = age, salary = salary)
         dao?.save(employee)
     }
 
-    fun update(id: Int, name: String, age: Int) = viewModelScope.launch {
-        val employee = Employee(id = id, name = name, age = age)
+    fun update(id: Int, name: String, age: Int,salary: Int) = viewModelScope.launch {
+        val employee = Employee(id = id, name = name, age = age,salary = salary)
         dao?.update(employee)
     }
 

@@ -44,6 +44,7 @@ fun EmployeeList(modifier: Modifier = Modifier, employeeList: List<Employee>,onD
                     ) {
                         Text(text = "Employee: ${employee.name}")
                         Text(text = "Age : ${employee.age}")
+                        Text(text = "Salary : ${employee.salary}")
                     }
                     IconButton(onClick = {
                         onDelete(employee.id)

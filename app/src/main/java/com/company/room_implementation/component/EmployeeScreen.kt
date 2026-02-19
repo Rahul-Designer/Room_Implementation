@@ -33,11 +33,12 @@ fun EmployeeScreen(
     modifier: Modifier = Modifier,
     employeeList: List<Employee> = emptyList(),
     onDelete: (Int) -> Unit = {},
-    onSave: (String, Int) -> Unit = { _, _ -> },
-    onUpdate: (Int, String, Int) -> Unit = { _, _, _ -> }
+    onSave: (String, Int, Int) -> Unit = { _, _, _ -> },
+    onUpdate: (Int, String, Int, Int) -> Unit = { _, _, _, _ -> }
 ) {
     var name by rememberSaveable() { mutableStateOf("") }
     var age by rememberSaveable() { mutableStateOf("") }
+    var salary by rememberSaveable() { mutableStateOf("") }
     var id by rememberSaveable() { mutableStateOf("") }
     Scaffold(modifier = Modifier.fillMaxSize(), topBar = {
         TopAppBar(title = { Text(text = "Room Database") })
@@ -73,6 +74,18 @@ fun EmployeeScreen(
                         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
                     )
                     OutlinedTextField(
+                        value = salary,
+                        onValueChange = {
+                            salary = it
+                        },
+                        modifier = Modifier.fillMaxWidth(),
+                        label = {
+                            Text(text = "Enter your salary...")
+                        },
+                        singleLine = true,
+                        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
+                    )
+                    OutlinedTextField(
                         value = id,
                         onValueChange = {
                             id = it
@@ -91,20 +104,22 @@ fun EmployeeScreen(
                     ) {
                         Button(onClick = {
                             if (name.isNotBlank() && age.isNotBlank()) {
-                                onSave(name, age.toInt())
+                                onSave(name, age.toInt(), salary.toInt())
                                 name = ""
                                 age = ""
                                 id = ""
+                                salary = ""
                             }
                         }) {
                             Text(text = "Save Employee")
                         }
                         Button(onClick = {
                             if (id.isNotBlank() && name.isNotBlank() && age.isNotBlank()) {
-                                onUpdate(id.toInt(), name, age.toInt())
+                                onUpdate(id.toInt(), name, age.toInt(),salary.toInt())
                                 name = ""
                                 age = ""
                                 id = ""
+                                salary = ""
                             }
                         }) {
                             Text(text = "Update Employee")

@@ -1,5 +1,6 @@
 package com.company.room_implementation.model
 
+import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
@@ -8,5 +9,7 @@ data class Employee(
     @PrimaryKey(autoGenerate = true)
     val id : Int = 0,
     val name : String,
-    val age : Int
+    val age : Int,
+    @ColumnInfo(name = "salary", defaultValue = "")
+    val salary : Int
 )
