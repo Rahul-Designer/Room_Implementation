@@ -13,3 +13,10 @@ data class Employee(
     @ColumnInfo(name = "salary", defaultValue = "")
     val salary : Int
 )
+
+@Entity(tableName = "EmployeeExpanses")
+data class EmployeeExpanses(
+    val id : Int,
+    val expansePrice : Double,
+    val expanseList : List<String>
+)
