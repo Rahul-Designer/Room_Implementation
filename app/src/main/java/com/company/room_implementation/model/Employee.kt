@@ -7,9 +7,16 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "EmployeeEntity")
 data class Employee(
     @PrimaryKey(autoGenerate = true)
-    val id : Int = 0,
-    val name : String,
-    val age : Int,
+    val id: Int = 0,
+    val name: String,
+    val age: Int,
     @ColumnInfo(name = "salary", defaultValue = "")
-    val salary : Int
+    val salary: Int
+)
+
+@Entity(tableName = "ClientEntity")
+data class ClientDetail(
+    val name: String,
+    val age: Int,
+    val salary: Int
 )
