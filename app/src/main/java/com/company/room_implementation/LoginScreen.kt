@@ -7,7 +7,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 
 @Composable
-fun LoginScreen() {
+fun LoginScreen(
+    modifier: Modifier = Modifier,
+) {
     Scaffold(modifier = Modifier) { innerPadding ->
         Column(modifier = Modifier.padding(innerPadding)) { }
     }
