@@ -13,6 +13,12 @@ data class Employee(
     @ColumnInfo(name = "salary", defaultValue = "")
     val salary: Int
 )
+@Entity(tableName = "EmployeeSalaryEntity")
+data class EmployeeSalary(
+    val name: String,
+    val salary: Int
+)
+
 
 @Entity(tableName = "ClientEntity")
 data class ClientDetail(
