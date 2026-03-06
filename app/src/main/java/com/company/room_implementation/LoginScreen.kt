@@ -14,7 +14,6 @@ fun LoginScreen(
     Scaffold(modifier = Modifier) { innerPadding ->
         Column(modifier = Modifier.padding(innerPadding)) {
             Text("Login Screen Feature..")
-            Text("Login Screen1 Feature..")
         }
     }
 }
