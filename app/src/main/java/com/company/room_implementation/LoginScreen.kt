@@ -15,8 +15,6 @@ fun LoginScreen(
         Column(modifier = Modifier.padding(innerPadding)) {
             Text("Login Screen Feature..")
             Text("Login Screen1 Feature..")
-            Text("Login Screen master..")
-            Text("Login Screen1 master..")
         }
     }
 }
